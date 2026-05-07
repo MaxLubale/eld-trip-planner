@@ -12,7 +12,7 @@ def geocode_location(place):
     headers = {
         # OSM requires a specific User-Agent. 
         # Adding a fake email/repo link helps prevent being flagged as a bot.
-        "User-Agent": "MeridianLogisticsPlanner/1.0 (contact: your-email@example.com)"
+        "User-Agent": "MeridianLogisticsPlanner/1.0 (contact: lubalecliff@gmail.com.com)"
     }
 
     res = requests.get(url, params=params, headers=headers)
