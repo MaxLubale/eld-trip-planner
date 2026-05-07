@@ -1,12 +1,12 @@
+@import "leaflet/dist/leaflet.css";
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap');
 
+/* ==========================================================================
+   2. TAILWIND DIRECTIVES
+   ========================================================================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Leaflet mandatory import */
-@import "leaflet/dist/leaflet.css";
-
 /* =========================
    DESIGN SYSTEM — MERIDIAN LOGISTICS
    Industrial-precision aesthetic:

@@ -3,7 +3,7 @@ import axios from "axios";
 import MapView from "./MapView";
 import "leaflet/dist/leaflet.css";
 
-/* ================= TYPES ================= */
+// TYPES 
 
 type FormData = {
   currentLocation: string;
@@ -40,7 +40,7 @@ type ApiResponse = {
   stops: Stop[];
 };
 
-/* ================= ICONS ================= */
+// ICONS  
 
 const IconRoute = () => (
   <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
@@ -74,8 +74,7 @@ const IconTruck = () => (
   </svg>
 );
 
-/* ================= ELD LOG SHEET ================= */
-
+// ELD LOG SHEET  
 function ELDLogSheet({ log, date }: { log: DayLog; date: string }) {
   const getPos = (time: number) => (time / 24) * 100;
 
@@ -260,7 +259,7 @@ function ELDLogSheet({ log, date }: { log: DayLog; date: string }) {
   );
 }
 
-/* ================= FIELD COMPONENT ================= */
+// FIELD COMPONENT 
 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -279,7 +278,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   );
 }
 
-/* ================= SECTION DIVIDER ================= */
+// SECTION DIVIDER
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -295,7 +294,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-/* ================= STOP TYPE COLORS ================= */
+// STOP TYPE COLORS
 
 const stopStyles: Record<string, { bg: string; color: string; border: string }> = {
   REST:    { bg: "var(--success-dim)", color: "var(--success)", border: "rgba(34,197,94,0.25)" },
@@ -311,7 +310,7 @@ function stopBadge(type: string) {
   return s;
 }
 
-/* ================= MAIN APPLICATION ================= */
+// MAIN APPLICATION
 
 export default function App() {
   const [form, setForm] = useState<FormData>({
