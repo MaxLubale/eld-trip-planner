@@ -325,21 +325,26 @@ export default function App() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
-    if (!form.currentLocation || !form.dropoffLocation) {
-      alert("Please enter at least Departure and Destination.");
-      return;
-    }
-    try {
-      setLoading(true);
-      const res = await axios.post<ApiResponse>("http://127.0.0.1:8000/api/plan-trip/", form);
-      setData(res.data);
-    } catch (err) {
-      console.error(err);
-      alert("Backend connection error. Ensure the FastAPI server is on :8000");
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (!form.currentLocation || !form.dropoffLocation) {
+    alert("Please enter at least Departure and Destination.");
+    return;
+  }
+
+  // Get the base URL from the env file, fallback to empty string if missing
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "";
+
+  try {
+    setLoading(true);
+    // Using a template literal to combine the base URL and the endpoint
+    const res = await axios.post<ApiResponse>(`${API_BASE_URL}/api/plan-trip/`, form);
+    setData(res.data);
+  } catch (err) {
+    console.error("Connection Error:", err);
+    alert("Backend connection error. Please check your API configuration.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const inputStyle: React.CSSProperties = {
     width: "100%", padding: "0.65rem 1rem",
