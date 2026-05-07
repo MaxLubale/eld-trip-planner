@@ -26,7 +26,13 @@ SECRET_KEY = 'django-insecure--iq194_=82oeqv2d)gly!lq53di06@9c)k0wddc&)c^qk@3lg!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    
+    'eld-trip-planner-fube.onrender.com', 
+    'localhost', 
+    '127.0.0.1'
+]
+
 
 
 # Application definition
