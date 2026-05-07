@@ -10,6 +10,7 @@ gunicorn==26.0.0
 h11==0.16.0
 idna==3.13
 packaging==26.2
+python-dotenv==1.2.2
 requests==2.33.1
 sqlparse==0.5.5
 urllib3==2.6.3
